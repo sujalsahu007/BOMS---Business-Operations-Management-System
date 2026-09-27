@@ -1,0 +1,694 @@
+/* ============================================================
+   StockOperationsTab.css
+   Shared styles for Transfers, Adjustments, Transactions tabs
+   Uses the same token system as SuppliersTab.css / WarehousesTab.css
+   ============================================================ */
+
+/* Table container wrapper */
+.enterprise-table-container {
+    overflow-x: auto;
+}
+
+/* Status Badge - used in Transfers table */
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.2rem 0.65rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.status-badge.active {
+    background: #dcfce7;
+    color: #166534;
+}
+
+/* btn-primary / btn-secondary aliases using existing .so-btn-* */
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.25rem;
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+    background: var(--primary-hover);
+}
+
+.btn-primary:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.25rem;
+    background: var(--surface-highlight);
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.stock-operations-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.stock-ops-nav {
+    display: flex;
+    gap: 0;
+    border-bottom: 2px solid var(--border-color);
+    background: var(--surface-color);
+    padding: 0 2rem;
+}
+
+.stock-ops-tab {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 1.25rem;
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.stock-ops-tab:hover {
+    color: var(--text-main);
+    background: rgba(0, 0, 0, 0.02);
+}
+
+.stock-ops-tab.active {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+}
+
+.stock-ops-content {
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.stock-ops-content > .enterprise-module-container {
+    height: 100%;
+}
+
+/* ============================================================
+   Shared Button Styles
+   ============================================================ */
+
+.so-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.25rem;
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.so-btn-primary:hover {
+    background: var(--primary-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.so-btn-primary:active {
+    transform: translateY(0);
+}
+
+.so-btn-primary:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.so-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.25rem;
+    background: var(--surface-highlight);
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.so-btn-secondary:hover {
+    background: var(--surface-highlight);
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.so-btn-secondary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.so-btn-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: var(--surface-highlight);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.so-btn-icon:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    background: rgba(59, 130, 246, 0.1);
+}
+
+.so-btn-icon:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* ============================================================
+   Quantity & Type Badges
+   ============================================================ */
+
+.so-qty-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-family: 'Courier New', monospace;
+    font-weight: 700;
+    font-size: 0.9rem;
+    background: var(--surface-highlight);
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+}
+
+.so-qty-badge.positive {
+    background: rgba(16, 185, 129, 0.1);
+    color: #059669;
+    border-color: rgba(16, 185, 129, 0.2);
+}
+
+.so-qty-badge.negative {
+    background: rgba(239, 68, 68, 0.1);
+    color: #dc2626;
+    border-color: rgba(239, 68, 68, 0.2);
+}
+
+.so-type-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 10px;
+    border-radius: 100px;
+    font-size: 0.78rem;
+    font-weight: 600;
+}
+
+.so-type-badge.increase {
+    background: rgba(16, 185, 129, 0.12);
+    color: #059669;
+    border: 1px solid rgba(16, 185, 129, 0.25);
+}
+
+.so-type-badge.decrease {
+    background: rgba(239, 68, 68, 0.1);
+    color: #dc2626;
+    border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+/* ============================================================
+   Transaction Ledger Styles
+   ============================================================ */
+
+.txn-table .txn-row {
+    cursor: pointer;
+    transition: background 0.15s ease;
+}
+
+.txn-table .txn-row:hover {
+    background: var(--surface-highlight) !important;
+}
+
+.so-txn-type-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.so-txn-type-badge.txn-type-in {
+    background: rgba(16, 185, 129, 0.1);
+    color: #059669;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.so-txn-type-badge.txn-type-out {
+    background: rgba(239, 68, 68, 0.08);
+    color: #dc2626;
+    border: 1px solid rgba(239, 68, 68, 0.15);
+}
+
+.txn-qty {
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.txn-qty.prev {
+    color: var(--text-muted);
+}
+
+.txn-qty.next {
+    color: var(--text-main);
+}
+
+.txn-qty.change.pos {
+    color: #059669;
+}
+
+.txn-qty.change.neg {
+    color: #dc2626;
+}
+
+/* ============================================================
+   Reason column truncation
+   ============================================================ */
+.so-reason-cell {
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+}
+
+/* ============================================================
+   Immutable notice badge in header
+   ============================================================ */
+.so-immutable-notice {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    background: rgba(107, 114, 128, 0.08);
+    color: var(--text-muted);
+    border: 1px solid var(--border-color);
+}
+
+/* ============================================================
+   Error State
+   ============================================================ */
+.so-error-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+    gap: 1rem;
+    text-align: center;
+    color: var(--text-muted);
+}
+
+/* ============================================================
+   Drawer Styles for Transfer & Adjustment forms
+   ============================================================ */
+
+/* Form Section grouping inside drawers */
+.drawer-section {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.drawer-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.drawer-section-title {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    margin: 0 0 1rem 0;
+}
+
+/* Current stock display */
+.so-stock-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.875rem 1rem;
+    border-radius: 8px;
+    background: var(--surface-highlight);
+    border: 1px solid var(--border-color);
+    margin: 0.75rem 0;
+}
+
+.so-stock-banner-label {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.so-stock-banner-value {
+    font-size: 1.25rem;
+    font-weight: 700;
+    font-family: 'Courier New', monospace;
+    color: var(--primary-color);
+}
+
+.so-stock-banner-value.loading {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-family: inherit;
+    font-weight: 400;
+}
+
+/* Live preview box */
+.so-preview-box {
+    padding: 1rem;
+    border-radius: 8px;
+    background: rgba(59, 130, 246, 0.04);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    border-left: 3px solid var(--primary-color);
+    margin-top: 1rem;
+}
+
+.so-preview-box.error {
+    background: rgba(239, 68, 68, 0.04);
+    border-color: rgba(239, 68, 68, 0.3);
+    border-left-color: #dc2626;
+}
+
+.so-preview-box-title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+}
+
+.so-preview-box.error .so-preview-box-title {
+    color: #dc2626;
+}
+
+.so-preview-error-msg {
+    color: #dc2626;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+/* Transfer preview flow layout */
+.so-transfer-flow {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.so-warehouse-block {
+    flex: 1;
+}
+
+.so-warehouse-block-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    margin-bottom: 0.35rem;
+}
+
+.so-warehouse-block-name {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+}
+
+.so-stock-change {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+}
+
+.so-stock-change .before {
+    color: var(--text-muted);
+}
+
+.so-stock-change .arrow {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
+
+.so-stock-change .after {
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.so-flow-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--text-muted);
+    flex-shrink: 0;
+}
+
+/* Adjustment preview */
+.so-adj-preview {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-family: 'Courier New', monospace;
+    font-size: 1.1rem;
+}
+
+.so-adj-preview .before { color: var(--text-muted); }
+.so-adj-preview .op.plus { color: #059669; font-weight: 700; }
+.so-adj-preview .op.minus { color: #dc2626; font-weight: 700; }
+.so-adj-preview .equals { color: var(--text-muted); }
+.so-adj-preview .result { font-weight: 800; color: var(--text-main); }
+
+/* Confirmation step */
+.so-confirmation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 0;
+    text-align: center;
+}
+
+.so-confirmation h3 {
+    margin: 1rem 0 1.5rem;
+    font-size: 1.1rem;
+    color: var(--text-main);
+    line-height: 1.4;
+}
+
+.so-confirm-card {
+    width: 100%;
+    max-width: 380px;
+    text-align: left;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.so-confirm-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.so-confirm-row:last-child {
+    border-bottom: none;
+}
+
+.so-confirm-row:nth-child(even) {
+    background: var(--surface-highlight);
+}
+
+.so-confirm-label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.so-confirm-value {
+    font-size: 0.875rem;
+    color: var(--text-main);
+    font-weight: 600;
+    text-align: right;
+    word-break: break-word;
+}
+
+/* ============================================================
+   Inline field error
+   ============================================================ */
+.so-field-error {
+    font-size: 0.8rem;
+    color: #dc2626;
+    margin-top: 4px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* ============================================================
+   Drawer inline alert banner
+   ============================================================ */
+.so-alert {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.875rem 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    font-size: 0.875rem;
+}
+
+.so-alert.warning {
+    background: rgba(239, 68, 68, 0.06);
+    border: 1px solid rgba(239, 68, 68, 0.25);
+    color: #dc2626;
+}
+
+.so-alert.info {
+    background: rgba(59, 130, 246, 0.05);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    color: var(--primary-color);
+}
+
+/* ============================================================
+   Transaction Detail Drawer Visualization
+   ============================================================ */
+.so-viz-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1.5rem;
+    background: var(--surface-highlight);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+}
+
+.so-viz-node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 0.75rem 2rem;
+    min-width: 140px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.so-viz-node-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    margin-bottom: 0.35rem;
+}
+
+.so-viz-node-value {
+    font-size: 1.5rem;
+    font-weight: 800;
+    font-family: 'Courier New', monospace;
+    color: var(--text-main);
+}
+
+.so-viz-arrow {
+    color: var(--text-muted);
+}
+
+.so-viz-movement {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.35rem 1.25rem;
+    border-radius: 100px;
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+    font-weight: 800;
+}
+
+.so-viz-movement.pos {
+    background: rgba(16, 185, 129, 0.12);
+    color: #059669;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.so-viz-movement.neg {
+    background: rgba(239, 68, 68, 0.1);
+    color: #dc2626;
+    border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+/* Spinning animation */
+.spinning {
+    animation: so-spin 1s linear infinite;
+}
+
+@keyframes so-spin {
+    100% { transform: rotate(360deg); }
+}

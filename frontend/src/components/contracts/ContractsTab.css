@@ -1,0 +1,562 @@
+/* ==========================================================================
+   Contracts Tab Styles - Premium Enterprise Design
+   ========================================================================== */
+
+.contracts-module-wrapper .tab-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    height: 100%;
+    animation: fadeIn 0.4s ease-out;
+}
+
+/* Header & Filters */
+.contracts-module-wrapper .tab-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    background: rgba(15, 23, 42, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    backdrop-filter: blur(12px);
+    flex-wrap: wrap;
+}
+
+html:not(.dark) .contracts-module-wrapper .tab-header {
+    background: rgba(255, 255, 255, 0.7);
+    border-color: rgba(0, 0, 0, 0.05);
+}
+
+.contracts-module-wrapper .search-filter-group {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex: 1;
+    flex-wrap: wrap;
+}
+
+.contracts-module-wrapper .search-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-width: 250px;
+}
+
+.contracts-module-wrapper .search-icon {
+    position: absolute;
+    left: 12px;
+    color: var(--text-muted);
+}
+
+.contracts-module-wrapper .search-bar input {
+    width: 100%;
+    padding: 10px 12px 10px 40px;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: var(--text-main);
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+html:not(.dark) .contracts-module-wrapper .search-bar input {
+    background: rgba(255, 255, 255, 0.8);
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+.contracts-module-wrapper .search-bar input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.contracts-module-wrapper .filter-select {
+    padding: 10px 32px 10px 16px;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: var(--text-main);
+    font-size: 0.9rem;
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 14px;
+    transition: all 0.3s ease;
+}
+
+html:not(.dark) .contracts-module-wrapper .filter-select {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-color: rgba(0, 0, 0, 0.1);
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23475569' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+}
+
+.contracts-module-wrapper .filter-select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.contracts-module-wrapper .action-group {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+/* Premium Buttons */
+.contracts-module-wrapper .primary-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.contracts-module-wrapper .primary-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4);
+}
+
+.contracts-module-wrapper .secondary-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--text-main);
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+html:not(.dark) .contracts-module-wrapper .secondary-btn {
+    background: transparent;
+    border-color: rgba(0, 0, 0, 0.2);
+}
+
+.contracts-module-wrapper .secondary-btn:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+html:not(.dark) .contracts-module-wrapper .secondary-btn:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.contracts-module-wrapper .icon-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+html:not(.dark) .contracts-module-wrapper .icon-btn {
+    background: rgba(0, 0, 0, 0.02);
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+.contracts-module-wrapper .icon-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-main);
+}
+
+html:not(.dark) .contracts-module-wrapper .icon-btn:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+/* Premium Enterprise Table */
+.contracts-module-wrapper .table-container {
+    background: rgba(15, 23, 42, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    backdrop-filter: blur(12px);
+}
+
+html:not(.dark) .contracts-module-wrapper .table-container {
+    background: rgba(255, 255, 255, 0.7);
+    border-color: rgba(0, 0, 0, 0.05);
+}
+
+.contracts-module-wrapper .enterprise-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.contracts-module-wrapper .enterprise-table th {
+    padding: 16px 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    background: rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+html:not(.dark) .contracts-module-wrapper .enterprise-table th {
+    background: rgba(0, 0, 0, 0.02);
+    border-bottom-color: rgba(0, 0, 0, 0.05);
+}
+
+.contracts-module-wrapper .enterprise-table td {
+    padding: 16px 20px;
+    font-size: 0.9rem;
+    color: var(--text-main);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    vertical-align: middle;
+}
+
+html:not(.dark) .contracts-module-wrapper .enterprise-table td {
+    border-bottom-color: rgba(0, 0, 0, 0.03);
+}
+
+.contracts-module-wrapper .enterprise-table tbody tr {
+    transition: all 0.2s ease;
+}
+
+.contracts-module-wrapper .enterprise-table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+html:not(.dark) .contracts-module-wrapper .enterprise-table tbody tr:hover {
+    background: rgba(0, 0, 0, 0.01);
+}
+
+.contracts-module-wrapper .actions-col {
+    width: 60px;
+}
+
+.contracts-module-wrapper .action-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    color: var(--primary-color);
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.contracts-module-wrapper .action-link:hover {
+    background: rgba(59, 130, 246, 0.1);
+}
+
+/* Renewals Summary Boxes */
+.renewals-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.renewals-summary-box {
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 0.85rem 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    text-align: left;
+    backdrop-filter: blur(12px);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+html:not(.dark) .renewals-summary-box {
+    background: rgba(255, 255, 255, 0.8);
+    border-color: rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+}
+
+.renewals-summary-box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.1);
+}
+
+.renewals-summary-box.expired {
+    background: rgba(239, 68, 68, 0.1);
+    border-color: rgba(239, 68, 68, 0.2);
+}
+
+html:not(.dark) .renewals-summary-box.expired {
+    background: rgba(254, 226, 226, 0.5);
+    border-color: rgba(252, 165, 165, 0.5);
+}
+
+.renewals-summary-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 0;
+    color: var(--amber-500, #f59e0b);
+}
+
+.renewals-summary-box.expired .renewals-summary-value {
+    color: var(--red-500, #ef4444);
+}
+
+.renewals-summary-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+}
+
+/* Status Badges */
+.contracts-module-wrapper .status-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.contracts-module-wrapper .status-badge.draft {
+    background: rgba(107, 114, 128, 0.1);
+    color: #9ca3af;
+    border: 1px solid rgba(107, 114, 128, 0.2);
+}
+
+.contracts-module-wrapper .status-badge.under-review, .status-badge.pending-approval {
+    background: rgba(245, 158, 11, 0.1);
+    color: #f59e0b;
+    border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.contracts-module-wrapper .status-badge.active {
+    background: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.contracts-module-wrapper .status-badge.rejected, .contracts-module-wrapper .status-badge.terminated, .contracts-module-wrapper .status-badge.expired {
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+    border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.contracts-module-wrapper .status-badge.expiring-soon {
+    background: rgba(217, 119, 6, 0.1);
+    color: #d97706;
+    border: 1px solid rgba(217, 119, 6, 0.2);
+}
+
+/* Party Statuses and Types */
+.contracts-module-wrapper .status-badge.inactive {
+    background: rgba(107, 114, 128, 0.1);
+    color: #9ca3af;
+    border: 1px solid rgba(107, 114, 128, 0.2);
+}
+
+.contracts-module-wrapper .status-badge.vendor {
+    background: rgba(139, 92, 246, 0.1);
+    color: #8b5cf6;
+    border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.contracts-module-wrapper .status-badge.customer {
+    background: rgba(14, 165, 233, 0.1);
+    color: #0ea5e9;
+    border: 1px solid rgba(14, 165, 233, 0.2);
+}
+
+.contracts-module-wrapper .status-badge.partner {
+    background: rgba(236, 72, 153, 0.1);
+    color: #ec4899;
+    border: 1px solid rgba(236, 72, 153, 0.2);
+}
+
+.contracts-module-wrapper .status-badge.contractor {
+    background: rgba(249, 115, 22, 0.1);
+    color: #f97316;
+    border: 1px solid rgba(249, 115, 22, 0.2);
+}
+
+.contracts-module-wrapper .status-badge.expiring-soon {
+    background: rgba(217, 119, 6, 0.1);
+    color: #d97706;
+    border: 1px solid rgba(217, 119, 6, 0.2);
+}
+
+/* Pagination */
+.contracts-module-wrapper .pagination-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background: rgba(15, 23, 42, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    backdrop-filter: blur(12px);
+}
+
+html:not(.dark) .contracts-module-wrapper .pagination-bar {
+    background: rgba(255, 255, 255, 0.7);
+    border-color: rgba(0, 0, 0, 0.05);
+}
+
+.contracts-module-wrapper .pagination-info {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.contracts-module-wrapper .pagination-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.contracts-module-wrapper .pagination-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-main);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+html:not(.dark) .contracts-module-wrapper .pagination-btn {
+    background: rgba(0, 0, 0, 0.02);
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+.contracts-module-wrapper .pagination-btn:hover:not(:disabled) {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+}
+
+.contracts-module-wrapper .pagination-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.contracts-module-wrapper .pagination-page {
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* Lifecycle Indicator */
+.contracts-module-wrapper .lifecycle-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem;
+    background: rgba(15, 23, 42, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    margin-bottom: 1.5rem;
+    position: relative;
+    backdrop-filter: blur(12px);
+}
+
+html:not(.dark) .contracts-module-wrapper .lifecycle-indicator {
+    background: rgba(255, 255, 255, 0.7);
+    border-color: rgba(0, 0, 0, 0.05);
+}
+
+.contracts-module-wrapper .lifecycle-indicator::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 2rem;
+    right: 2rem;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.1);
+    z-index: 0;
+    transform: translateY(-50%);
+}
+
+html:not(.dark) .contracts-module-wrapper .lifecycle-indicator::before {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.contracts-module-wrapper .lifecycle-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    z-index: 1;
+    position: relative;
+    width: 100px;
+}
+
+.contracts-module-wrapper .lifecycle-step .step-circle {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(15, 23, 42, 0.8);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    transition: all 0.3s ease;
+}
+
+html:not(.dark) .contracts-module-wrapper .lifecycle-step .step-circle {
+    background: #ffffff;
+    border-color: rgba(0, 0, 0, 0.2);
+}
+
+.contracts-module-wrapper .lifecycle-step .step-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
+}
+
+.contracts-module-wrapper .lifecycle-step.active .step-circle {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+}
+
+.contracts-module-wrapper .lifecycle-step.active .step-label {
+    color: var(--primary-color);
+}
+
+.contracts-module-wrapper .lifecycle-step.current .step-circle {
+    transform: scale(1.2);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.8);
+}
+

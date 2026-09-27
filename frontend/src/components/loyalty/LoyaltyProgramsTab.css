@@ -1,0 +1,215 @@
+/* Loyalty Programs Tab Styles */
+
+.loyalty-workspace .kpi-strip {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.loyalty-workspace .kpi-card {
+    padding: 1rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(15, 23, 42, 0.4);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    backdrop-filter: blur(12px);
+}
+
+html:not(.dark) .loyalty-workspace .kpi-card {
+    background: rgba(255, 255, 255, 0.7);
+    border-color: rgba(0, 0, 0, 0.05);
+}
+
+.loyalty-workspace .kpi-card:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+html:not(.dark) .loyalty-workspace .kpi-card:hover {
+    border-color: rgba(0, 0, 0, 0.15);
+}
+
+.loyalty-workspace .kpi-card.active-filter {
+    background: rgba(59, 130, 246, 0.1);
+    border-color: var(--primary-color);
+}
+
+.loyalty-workspace .kpi-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.loyalty-workspace .kpi-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Filter Bar */
+.loyalty-workspace .filter-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    background: rgba(15, 23, 42, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    backdrop-filter: blur(12px);
+    margin-bottom: 1rem;
+}
+
+html:not(.dark) .loyalty-workspace .filter-bar {
+    background: rgba(255, 255, 255, 0.7);
+    border-color: rgba(0, 0, 0, 0.05);
+}
+
+.loyalty-workspace .filter-left {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    flex: 1;
+}
+
+.loyalty-workspace .filter-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.loyalty-workspace .search-box {
+    display: flex;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 0 12px;
+    width: 300px;
+}
+html:not(.dark) .loyalty-workspace .search-box {
+    background: rgba(255, 255, 255, 0.8);
+    border-color: rgba(0, 0, 0, 0.1);
+}
+.loyalty-workspace .search-box input {
+    background: transparent;
+    border: none;
+    color: var(--text-main);
+    padding: 10px;
+    width: 100%;
+    outline: none;
+}
+.loyalty-workspace .search-icon {
+    color: var(--text-muted);
+}
+
+.loyalty-workspace .filter-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 0 12px;
+}
+html:not(.dark) .loyalty-workspace .filter-group {
+    background: rgba(255, 255, 255, 0.8);
+    border-color: rgba(0, 0, 0, 0.1);
+}
+.loyalty-workspace .filter-select {
+    background: transparent;
+    border: none;
+    color: var(--text-main);
+    padding: 10px 0;
+    outline: none;
+    cursor: pointer;
+}
+.loyalty-workspace .filter-select option {
+    background: var(--bg-primary);
+    color: var(--text-main);
+}
+
+/* Fix dropdown clipping by making entire hierarchy visible */
+.loyalty-workspace,
+.loyalty-page,
+.tab-content,
+.scrollable-content,
+.loyalty-workspace .table-container,
+.loyalty-workspace .enterprise-table,
+.loyalty-workspace tbody,
+.loyalty-workspace tr,
+.loyalty-workspace td {
+    overflow: visible !important;
+}
+
+.loyalty-workspace .table-container {
+    min-height: 300px; /* Ensure enough room for dropdown even with 1 row */
+}
+
+/* Pagination */
+.loyalty-workspace .pagination-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background: rgba(15, 23, 42, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    margin-top: 1rem;
+    backdrop-filter: blur(12px);
+}
+
+html:not(.dark) .loyalty-workspace .pagination-bar {
+    background: rgba(255, 255, 255, 0.7);
+    border-color: rgba(0, 0, 0, 0.05);
+}
+
+.loyalty-workspace .pagination-info {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+.loyalty-workspace .pagination-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.loyalty-workspace .pagination-current {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-main);
+}
+
+/* Action Dropdown Dark Mode Overrides */
+.action-dropdown {
+    background: #1e293b !important; /* slate-800 */
+    border-color: rgba(255, 255, 255, 0.1) !important;
+    z-index: 50 !important;
+}
+html:not(.dark) .action-dropdown {
+    background: #ffffff !important;
+    border-color: #e2e8f0 !important;
+}
+.action-dropdown .dropdown-item {
+    color: var(--text-main) !important;
+}
+.action-dropdown .dropdown-item:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+}
+html:not(.dark) .action-dropdown .dropdown-item:hover {
+    background: #f1f5f9 !important; /* slate-100 */
+}
+.action-dropdown .text-success { color: #10b981 !important; }
+.action-dropdown .text-warning { color: #f59e0b !important; }

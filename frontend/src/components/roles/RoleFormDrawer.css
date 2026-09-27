@@ -1,0 +1,204 @@
+/* Premium Drawer Overlay */
+.role-drawer-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100vh;
+    background: var(--overlay-bg);
+    backdrop-filter: blur(8px);
+    z-index: 9999;
+    display: flex;
+    justify-content: flex-end;
+    animation: fadeInOverlay 0.4s ease-out;
+}
+
+/* Premium Drawer Container */
+.role-drawer {
+    width: 100%;
+    max-width: 480px;
+    background: var(--bg-gradient);
+    border-left: 1px solid var(--border-color);
+    height: 100vh;
+    max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-sizing: border-box;
+    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.5);
+    animation: slideInDrawer 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    z-index: 10000;
+}
+
+@keyframes fadeInOverlay {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInDrawer {
+    from { transform: translateX(100%); }
+    to { transform: translateX(0); }
+}
+
+.drawer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 2rem 1.5rem;
+    background: transparent;
+    border-bottom: 1px solid var(--border-color);
+    position: relative;
+    z-index: 2;
+    flex-shrink: 0;
+}
+
+.drawer-header h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--text-main);
+    letter-spacing: -0.02em;
+}
+
+.close-button {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-color);
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+html.light .close-button {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.close-button:hover {
+    background: var(--error-bg);
+    color: var(--error-color);
+    border-color: rgba(239, 68, 68, 0.3);
+    transform: rotate(90deg);
+}
+
+.drawer-content {
+    flex: 1 1 auto;
+    height: 0;
+    overflow-y: auto;
+    padding: 2rem;
+    position: relative;
+    box-sizing: border-box;
+    scrollbar-width: thin;
+    animation: fadeUp 0.4s ease-out;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    background: var(--surface-color);
+    color: var(--text-main);
+    font-size: 0.95rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: inherit;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+html:not(.dark) .form-group input,
+html:not(.dark) .form-group select,
+html:not(.dark) .form-group textarea {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background: var(--surface-highlight);
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15), inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+html:not(.dark) .form-group input:focus,
+html:not(.dark) .form-group select:focus,
+html:not(.dark) .form-group textarea:focus {
+    background: #ffffff;
+}
+
+.form-error {
+    margin-bottom: 1.5rem;
+    background: var(--error-bg);
+    color: var(--error-color);
+    padding: 1rem;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    box-shadow: 0 4px 10px rgba(239, 68, 68, 0.1);
+}
+
+.drawer-footer {
+    padding: 1.5rem 2rem;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    background: var(--surface-highlight);
+    backdrop-filter: blur(20px);
+}
+html:not(.dark) .drawer-footer {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.secondary-button {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+    padding: 0.75rem 1.5rem;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+html:not(.dark) .secondary-button {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.secondary-button:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+html:not(.dark) .secondary-button:hover:not(:disabled) {
+    background: rgba(0, 0, 0, 0.1);
+    border-color: rgba(0, 0, 0, 0.2);
+}
+
+.secondary-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+

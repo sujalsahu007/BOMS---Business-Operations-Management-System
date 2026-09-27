@@ -1,0 +1,144 @@
+.notification-detail-body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.detail-header-section h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.25rem;
+    color: var(--text-color);
+}
+
+.detail-meta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    background: var(--bg-surface);
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.meta-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.meta-value {
+    font-size: 0.875rem;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.meta-value.time-val {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-muted);
+    font-weight: 400;
+}
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    width: fit-content;
+}
+
+.status-badge.active {
+    background: rgba(16, 185, 129, 0.1);
+    color: #10B981;
+}
+
+.status-badge.inactive {
+    background: rgba(239, 68, 68, 0.1);
+    color: #EF4444;
+}
+
+.detail-message-section h4,
+.detail-reference-section h4 {
+    margin: 0 0 12px 0;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.message-box {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    padding: 16px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-color);
+    white-space: pre-wrap;
+}
+
+.reference-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+}
+
+.ref-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.ref-type {
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.ref-id {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+.detail-actions {
+    margin-top: auto;
+    padding-top: 24px;
+    border-top: 1px solid var(--border-color);
+}
+
+.full-width {
+    width: 100%;
+    justify-content: center;
+}
+
+.drawer-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Inherit the colors from NotificationsPage.css if they exist, else defaults */
+.drawer-icon.system { background: rgba(59, 130, 246, 0.1); color: #3b82f6; }
+.drawer-icon.security { background: rgba(239, 68, 68, 0.1); color: #ef4444; }
+.drawer-icon.approval { background: rgba(16, 185, 129, 0.1); color: #10b981; }
+.drawer-icon.inventory { background: rgba(245, 158, 11, 0.1); color: #f59e0b; }
+.drawer-icon.contract { background: rgba(139, 92, 246, 0.1); color: #8b5cf6; }
+.drawer-icon.loyalty { background: rgba(236, 72, 153, 0.1); color: #ec4899; }
+.drawer-icon.default { background: rgba(100, 116, 139, 0.1); color: #64748b; }
