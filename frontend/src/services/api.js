@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const api = axios.create({
-    baseURL: 'http://localhost:5280/api', // Adjusted base URL for API controllers
+    baseURL: 'https://boms-9707.onrender.com/api', // Adjusted base URL for API controllers
 });
 
 // Inventory
@@ -118,7 +118,7 @@ api.interceptors.response.use(
 // Keep existing health check pointing to root
 export const checkHealth = async () => {
     try {
-        const response = await axios.get('http://localhost:5280/health');
+        const response = await axios.get('https://boms-9707.onrender.com/health');
         return {
             backend: true,
             database: response.data === 'Healthy'

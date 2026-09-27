@@ -141,7 +141,7 @@ const WarehouseDetailDrawer = ({ warehouseId, onClose }) => {
                                                     <tr key={s.warehouseStockId}>
                                                         <td className="product-cell">
                                                             {s.imageUrl ? (
-                                                                <img src={`http://localhost:5280${s.imageUrl}`} alt={s.productName} className="product-thumb" />
+                                                                <img src={`https://boms-9707.onrender.com${s.imageUrl}`} alt={s.productName} className="product-thumb" />
                                                             ) : (
                                                                 <div className="product-thumb placeholder">
                                                                     <Package size={16} />

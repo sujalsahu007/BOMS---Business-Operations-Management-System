@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'http://localhost:5032/api/public';
+const API_BASE_URL = 'https://boms-9707.onrender.com/api/public';
 
 const publicApi = axios.create({
     baseURL: API_BASE_URL,

@@ -207,7 +207,7 @@ const ProductFormDrawer = ({ isOpen, onClose, product, onSuccess }) => {
                 <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
                     {formData.imageUrl && (
                     <img 
-                        src={`http://localhost:5280${formData.imageUrl}`} 
+                        src={`https://boms-9707.onrender.com${formData.imageUrl}`} 
                         alt="Preview" 
                         style={{ width: '80px', height: '80px', objectFit: 'cover', borderRadius: '8px', border: '1px solid var(--border-color)' }}
                     />

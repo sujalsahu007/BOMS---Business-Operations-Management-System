@@ -172,7 +172,7 @@ const ProductsTab = () => {
                   <td>
                     {product.imageUrl ? (
                       <img 
-                        src={`http://localhost:5280${product.imageUrl}`} 
+                        src={`https://boms-9707.onrender.com${product.imageUrl}`} 
                         alt={product.productName}
                         style={{ width: '40px', height: '40px', objectFit: 'cover', borderRadius: '4px' }}
                       />

@@ -44,7 +44,7 @@ const ProductDetailDrawer = ({ isOpen, onClose, productId }) => {
               {product.imageUrl && (
                 <div style={{ marginBottom: '1.5rem', textAlign: 'center' }}>
                   <img 
-                    src={`http://localhost:5280${product.imageUrl}`} 
+                    src={`https://boms-9707.onrender.com${product.imageUrl}`} 
                     alt={product.productName}
                     style={{ width: '100%', maxWidth: '300px', height: 'auto', borderRadius: '8px', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)' }}
                   />
